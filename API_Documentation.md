@@ -103,3 +103,12 @@
 
 **URL:** `/geteverything/John`
 **Method:** `GET`
+
+```
+
+### Get All User's Post and Page
+
+**URL:** `/geteverything`
+**Method:** `GET`
+
+```
