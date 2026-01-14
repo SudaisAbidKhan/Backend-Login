@@ -1,7 +1,7 @@
-import postModel from "../model/postModel.js";
+import pageModel from "../model/pageModel.js";
 import userModel from "../model/userModel.js";
 
-export const uploadPost = async (req, res) => {
+export const uploadPage = async (req, res) => {
   const { userId } = req;
 
   try {
@@ -11,27 +11,27 @@ export const uploadPost = async (req, res) => {
     }
 
     const name = user.name;
-    const { data } = req.body;
-    const newPost = new postModel({ author: name, data });
-    await newPost.save();
+    const { data2 } = req.body;
+    const newpage = new pageModel({ author: name, data2});
+    await newpage.save();
 
-    return res.json({ success: true, message: "Post Uploaded" });
+    return res.json({ success: true, message: "page Uploaded" });
   } catch (error) {
     return res.json({ success: false, message: error.message });
   }
 };
 
-export const getAllPost = async (req, res) => {
+export const getAllPage = async (req, res) => {
   try {
-    const post = await postModel.find();
+    const page = await pageModel.find();
 
-    return res.json({ success: true, post: post });
+    return res.json({ success: true, page: page });
   } catch (error) {
     return res.json({ success: false, message: error.message });
   }
 };
 
-export const getUserPost = async (req, res) => {
+export const getUserPage = async (req, res) => {
   const { userId } = req;
 
   try {
@@ -39,11 +39,12 @@ export const getUserPost = async (req, res) => {
     if (!user) {
       return res.json({ success: true, message: "User not found" });
     }
-    const author = user.name;
-    const userPost = await postModel.find({ author });
+    const author = user.name
+    const userpage = await pageModel.find({author});
 
-    return res.json({ success: true, userPost });
+    return res.json({ success: true, userpage});
+
   } catch (error) {
     return res.json({ success: false, message: error.message });
   }
-};
+}
