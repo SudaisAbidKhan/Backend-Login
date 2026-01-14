@@ -99,7 +99,7 @@
 
 ```
 
-### Get User's Post
+### Get User's Post and Page
 
 **URL:** `/geteverything/John`
 **Method:** `GET`
