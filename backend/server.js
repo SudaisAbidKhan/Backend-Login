@@ -12,7 +12,7 @@ import postModel from "./model/postModel.js";
 const app = express();
 connectDB();
 
-const port = process.env.PORT || 4001;
+const port = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cookieParser());
