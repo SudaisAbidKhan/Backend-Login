@@ -98,3 +98,8 @@
 
 
 ```
+
+### Get User's Post
+
+**URL:** `/geteverything/John`
+**Method:** `GET`
